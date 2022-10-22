@@ -5,9 +5,9 @@ class NewDiv extends Component {
     render() {
         return (
             <div>
-                <div class = "screen">1</div>
-                <div class = "button">2</div>
-                <div class = "setting">3</div>
+                <div class = "screen"></div>
+                <div class = "button"></div>
+                <div class = "setting"></div>
             </div>
         )
     }
