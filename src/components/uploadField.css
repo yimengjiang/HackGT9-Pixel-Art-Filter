@@ -1,3 +1,25 @@
-p {
-    color: red;
+#upload-field {
+    cursor: pointer;
+    width: 30%;
+    height: auto;
+    padding: 7.5% 10px 7.5% 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px dashed #4e6878;
+    background-color: #d0ebf3;
+    margin: 15px;
+}
+
+#upload-icon {
+    max-width: 25%;
+    margin: 5% 0;
+}
+
+path#path0 {
+    fill: #4e6878;
+}
+
+svg#svg {
+    cursor: pointer;
 }
