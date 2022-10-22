@@ -1,3 +1,8 @@
 button {
     color:blueviolet;
+    text-align: center;
+    padding: 15px 32px;
+    width: 30%;
+    height: 100px;
+    margin: 20px;
 }
