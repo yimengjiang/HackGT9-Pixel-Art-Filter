@@ -1,3 +1,56 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+
+.page-content {
+    height: 100vh;
+}
+
+.screen-panel {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #a12cc0;
+}
+
+.button-panel {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e446fb;
+}
+
+.settings-panel {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #b826ce;
+}
+
+.screen {
+    height: 65vh;
+    width: 97vw;
+    display: flex;
+    justify-content: center;
+    background-color: #222222;
+    align-content: center;
+}
+
+.screen-wrapper {
+    display: flex;
+    align-items: center;
+    width: 96vw;
+}
+
+#buttons-column {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}

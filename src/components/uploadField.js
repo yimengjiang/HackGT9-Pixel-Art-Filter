@@ -49,7 +49,8 @@ class UploadField extends Component {
         const uploadPromptField = 
                     <>
                         <img src="./upload.svg" alt="Upload File" id="upload-icon"/>
-                        <p id="upload-text">Choose File</p>
+                        <br/>
+                        <span id="upload-text">Choose File</span>
                     </>
         
         const displayFileField = 
@@ -58,6 +59,7 @@ class UploadField extends Component {
                             src={this.state.selectedFile? this.state.selectedFile.data : this.state.selectedFile}
                             alt="Selected file" id="chosen-file-display"
                         />
+                        <br/>
                         <span id="remove-text">Choose New File</span>
                     </>
 

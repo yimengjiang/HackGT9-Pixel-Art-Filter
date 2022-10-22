@@ -4,9 +4,10 @@ import { Component } from 'react';
 class OptionButton extends Component {
     render() {
         return (
-            //<button onClick={() => {alert(this.props.thisButtonClicks)}}>{this.props.option1}</button>
-            <button type="button" style={{"background-color": this.props.color}} onClick={() => {alert(this.props.thisButtonClicks)}}>{this.props.option1}
-                Option 1
+            <button
+                type="button" style={{"background-color": this.props.color}}
+            >
+                {this.props.text}
             </button>
         )
     }

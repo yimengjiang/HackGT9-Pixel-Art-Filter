@@ -1,15 +1,14 @@
 #display-chosen-field, #upload-field {
     cursor: pointer;
-    width: 30%;
-    height: auto;
-    padding: 6% 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px dashed #4e6878;
+    border: 2px dashed #a3c4d8;
     background-color: #d0ebf3;
-    margin: 15px;
+    margin-left: 225px;
     color: #4e6878;
+    width: 97%;
+    max-height: 46%;
 }
 
 #upload-field {
@@ -29,7 +28,7 @@
 }
 
 #chosen-file-display {
-    max-width: 45%;
+    width: 36%;
     margin: 0 0 1.5em 0;
 }
 
