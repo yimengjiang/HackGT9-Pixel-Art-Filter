@@ -10,18 +10,29 @@ class App extends Component {
     }
 
     render() {
+        const promptForFile = <>
+            <div id="buttons-column">
+                <OptionButton text="Fine" border="#E51AC7"/>
+                <OptionButton text="Medium" border="#E51AC7"/>
+                <OptionButton text="Coarse" border="#E51AC7"/>
+                <OptionButton text="Generate" border="#1AC7E5" style={{flex: false}}/>
+            </div>
+
+            <UploadField ref={this.state.uploadFieldRef}/>
+        </>
+
+        const displayFilteredImg = <>
+
+        </>
+
         return (
             <div className="page-content">
                 <div className="screen-panel">
                     <div className="screen">
                         <div className="screen-wrapper">
-                            <div id="buttons-column">
-                                <OptionButton text="Fine" color="white"/>
-                                <OptionButton text="Medium" color="white"/>
-                                <OptionButton text="Coarse" color="white"/>
-                            </div>
-
-                            <UploadField ref={this.state.uploadFieldRef}/>
+                            {
+                                this.resultImg ? displayFilteredImg : promptForFile
+                            }
                             {/* <button onClick={async () => {
                                 const resultImg = await this.state.uploadFieldRef.current.getResult(1)
                                 this.setState({resultImg: resultImg})

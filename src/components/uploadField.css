@@ -3,12 +3,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px dashed #a3c4d8;
-    background-color: #d0ebf3;
-    margin-left: 225px;
-    color: #4e6878;
+    justify-items: center;
+    background-color: #d0ebf322;
+    color: white;
     width: 97%;
-    max-height: 46%;
+    max-height: 41%;
+    margin: 5% 2%;
+    flex: 1;
+    opacity: 1;
+    transition: opacity 150ms ease;
+}
+
+#display-chosen-field:hover, #upload-field:hover {
+    opacity: 80%;
 }
 
 #upload-field {
@@ -17,7 +24,6 @@
 
 #upload-icon {
     max-width: 25%;
-    margin: 0 0 1.5em 0;
 }
 
 #upload-text {

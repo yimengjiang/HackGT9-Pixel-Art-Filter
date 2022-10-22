@@ -5,7 +5,12 @@ class OptionButton extends Component {
     render() {
         return (
             <button
-                type="button" style={{"background-color": this.props.color}}
+                style={{
+                    borderColor: this.props.border,
+                    boxShadow: `${this.props.border} 0 0 7px`,
+                    color: this.props.border
+                }}
+                className="option-button"
             >
                 {this.props.text}
             </button>

@@ -1,5 +1,6 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 
 .page-content {
@@ -46,11 +47,16 @@ body {
 .screen-wrapper {
     display: flex;
     align-items: center;
-    width: 96vw;
+    /* width: 96vw; */
+    flex-direction: row;
 }
 
 #buttons-column {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 30%;
+    height: 80%;
+    margin-left: 2%;
+    flex: 1;
 }
