@@ -9,6 +9,7 @@ class NewDiv extends Component {
                 <div class = "button">2</div>
                 <div class = "setting">3</div>
             </div>
+            //<OptionButton color="red"/>
         )
     }
 }
