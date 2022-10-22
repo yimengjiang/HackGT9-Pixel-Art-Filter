@@ -1,4 +1,3 @@
-import './resultDisplay.css';
 import Resizer from 'react-image-file-resizer'
 
 const getImgDimensions = (imageSrc) => new Promise((res, rej) => {
