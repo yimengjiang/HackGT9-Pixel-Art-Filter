@@ -6,8 +6,7 @@ const allowedFileExts = ['png', 'jpg', 'jpeg']
 class UploadField extends Component {
     state = {
         selectedFile: null,
-        fileUploadRef: createRef(),
-        uploadSVGRef: createRef()
+        fileUploadRef: createRef()
     }
 
     handleClick() {
@@ -20,20 +19,47 @@ class UploadField extends Component {
         if (!allowedFileExts.includes(fileExt.toLowerCase())) {
             alert('Invalid file extension! Please choose a different file.')
         } else {
-            this.setState({selectedFile: event.target.files[0].name})
+            let reader = new FileReader()
+            reader.readAsDataURL(fileObj)
+            reader.onload = () => {
+                this.setState({selectedFile: {
+                    name: fileObj.name,
+                    ext: fileExt,
+                    data: reader.result
+                }})
+            }
+            reader.onerror = (err) => {
+                alert('Unexpected error occurred when loading image: '+err+'. Please try again.');
+            }
         }
     }
 
+    getChosenFile() {
+        return this.state.selectedFile;
+    }
+
     render() {
+        const uploadPromptField = 
+                    <>
+                        <img src="./upload.svg" alt="Upload File" id="upload-icon"/>
+                        <p id="upload-text">Choose File</p>
+                    </>
+        
+        const displayFileField = 
+                    <>
+                        <img
+                            src={this.state.selectedFile? this.state.selectedFile.data : this.state.selectedFile}
+                            alt="Selected file" id="chosen-file-display"
+                        />
+                        <span id="remove-text">Choose New File</span>
+                    </>
+
         return (
-            <div id="upload-field" onClick={this.handleClick.bind(this)}>
-                <object
-                    id="upload-icon" data="/upload.svg" aria-label="Upload File"
-                    onClick={this.handleClick.bind(this)}
-                />
-
-                <p id="upload-text">Choose File</p>
-
+            <div 
+                id='upload-field'
+                onClick={this.handleClick.bind(this)}
+            >
+                {this.state.selectedFile ? displayFileField : uploadPromptField}
                 <input
                     type="file" ref={this.state.fileUploadRef}
                     onChange={this.onFileChange.bind(this)} style={{display:'none'}}
