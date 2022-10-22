@@ -1,7 +1,8 @@
-#file-display-field, #upload-field {
+#display-chosen-field, #upload-field {
+    cursor: pointer;
     width: 30%;
     height: auto;
-    padding: 8% 10px;
+    padding: 6% 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +13,7 @@
 }
 
 #upload-field {
-    cursor: pointer;
+    padding: 8% 10px;
 }
 
 #upload-icon {
@@ -28,7 +29,7 @@
 }
 
 #chosen-file-display {
-    max-width: 35%;
+    max-width: 45%;
     margin: 0 0 1.5em 0;
 }
 

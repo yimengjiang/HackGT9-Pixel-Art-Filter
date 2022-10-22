@@ -1,4 +1,5 @@
 import './uploadField.css';
+import ResultDisplay from './resultDisplay.js'
 import { Component, createRef } from 'react';
 
 const allowedFileExts = ['png', 'jpg', 'jpeg']
@@ -25,7 +26,8 @@ class UploadField extends Component {
                 this.setState({selectedFile: {
                     name: fileObj.name,
                     ext: fileExt,
-                    data: reader.result
+                    data: reader.result,
+                    originalFile: fileObj
                 }})
             }
             reader.onerror = (err) => {
@@ -36,6 +38,11 @@ class UploadField extends Component {
 
     getChosenFile() {
         return this.state.selectedFile;
+    }
+
+    async getResult(filterMode) {
+        var resultImg = await ResultDisplay(this.state.selectedFile, filterMode)
+        return resultImg
     }
 
     render() {
@@ -56,7 +63,7 @@ class UploadField extends Component {
 
         return (
             <div 
-                id='upload-field'
+                id={this.state.selectedFile? 'display-chosen-field' : 'upload-field'}
                 onClick={this.handleClick.bind(this)}
             >
                 {this.state.selectedFile ? displayFileField : uploadPromptField}
