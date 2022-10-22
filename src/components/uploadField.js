@@ -1,4 +1,4 @@
-import '../App.css';
+import './uploadField.css';
 import { Component } from 'react';
 
 class UploadField extends Component {
