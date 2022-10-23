@@ -31,17 +31,16 @@ const resizeImg = (fileObj, fileExt, oriWidth, oriHeight, newWidth, newHeight) =
     )
 })
 
-async function ResultDisplay(imageData, filterMode) {
+async function ResultDisplay(imageData, filterMode, callBack) {
     const imgInfo = imageData
-    const resizeRatio = {1: 16.0, 2: 64.0, 3: 256.0}[filterMode]  // Key: Selection passed from buttons; Value: How many pixels in a "pixel"
-    var imgUri = null
+    const resizeRatio = {0: 16.0, 1: 32.0, 2: 64.0}[filterMode]  // Key: Selection passed from buttons; Value: How many pixels in a "pixel"
     const [imgWidth, imgHeight] = await getImgDimensions(imgInfo.data)
-    await resizeImg(imgInfo.originalFile, imgInfo.ext, imgWidth, imgHeight, imgWidth / resizeRatio, imgHeight / resizeRatio)
+    resizeImg(imgInfo.originalFile, imgInfo.ext, imgWidth, imgHeight, imgWidth / resizeRatio, imgHeight / resizeRatio)
         .then((uri) => {
-            imgUri = uri
-        })
-    return (
-        <img src={imgUri} alt="Filtered File"/>
+            callBack(
+                    <img src={uri} alt="Filtered File" id="result-image"/>
+            )
+        }
     )
 }
 

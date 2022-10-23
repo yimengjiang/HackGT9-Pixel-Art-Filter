@@ -7,19 +7,16 @@
     background-color: #d0ebf322;
     color: white;
     width: 97%;
-    max-height: 41%;
     margin: 5% 2%;
-    flex: 1;
+    flex: 1 1;
     opacity: 1;
     transition: opacity 150ms ease;
+    height: 50vh;
+    justify-content: center;
 }
 
 #display-chosen-field:hover, #upload-field:hover {
     opacity: 80%;
-}
-
-#upload-field {
-    padding: 8% 10px;
 }
 
 #upload-icon {
@@ -36,6 +33,8 @@
 #chosen-file-display {
     width: 36%;
     margin: 0 0 1.5em 0;
+    max-height: 26vh;
+    object-fit: contain;
 }
 
 #remove-text {

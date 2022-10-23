@@ -1,6 +1,5 @@
 .option-button {
     background-color: transparent;
-    text-align: center;
     padding: 15px 32px;
     width: 70%;
     flex: 1;
@@ -8,13 +7,18 @@
     color: white;
     font-size: 32px;
     font-family: 'Retro New Version', sans-serif;
-    border-radius: 10px;
-    border: 1px solid;
     cursor: pointer;
     opacity: 1;
     transition: opacity 150ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .option-button:hover {
     opacity: 80%;
+}
+
+.selected-option-button {
+    border-radius: 10px;
 }

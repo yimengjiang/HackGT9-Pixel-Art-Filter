@@ -40,9 +40,8 @@ class UploadField extends Component {
         return this.state.selectedFile;
     }
 
-    async getResult(filterMode) {
-        var resultImg = await ResultDisplay(this.state.selectedFile, filterMode)
-        return resultImg
+    getResult(filterMode, callBack) {
+        ResultDisplay(this.state.selectedFile, filterMode, callBack)
     }
 
     render() {
